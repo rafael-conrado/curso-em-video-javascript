@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio estrangeiro</title>
+</head>
+
+<body>
+    <h1> Sua nacionalidade </h1>
+
+    Qual o seu país ? <input type="text" name="txtNome" id="txtNome">
+    <input type="button" value="Verificar" onclick="nacionalidade()">
+    <div id="resultado">
+
+        <script>
+
+            function nacionalidade() {
+
+                var país = window.document.querySelector('input#txtNome').value.toUpperCase()
+                var resultado = window.document.querySelector('div#resultado')
+             
+
+
+                resultado.innerHTML = ` Sua resposta foi ${país} `
+
+                console.log(`Vivendo em ${país}`)
+
+
+                if (país == 'BRASIL') {
+                    resultado.innerHTML += `Você é Brasileiro!`
+
+                } else {
+                    resultado.innerHTML += "Você é estrangeiro"
+                }
+            }
+
+        </script>
+</body>
+
+</html>
