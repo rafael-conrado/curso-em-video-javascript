@@ -1,39 +1,44 @@
 function contarpasso() {
-   var inicio = Number(document.querySelector('.inicio').value)
-   var fim = Number(document.querySelector('.fim').value)
-   var passo = Number(document.querySelector('.passo').value)
+   var inicio = document.querySelector('.inicio')
+   var fim = document.querySelector('.fim')
+   var passo = document.querySelector('.passo')
    var saida = document.querySelector('div#saida')
-   var loop = 0;
 
 
 
-   if (inicio == "") {
-      saida.innerHTML = "Impossível calcular, por favor inserir um valor"
-    return false
-   } else if (passo == 0) {
-      window.alert("passo deve ser diferente de '0', considerando passo como 1")
-      passo = 1
-      for (inicio; inicio <= fim; inicio += passo) {
-         if (loop == 0) {
-            saida.innerHTML += `começando 👨‍💻 👉${inicio}  `
-            loop = 1
-         } else if (loop == 1) {
-            saida.innerHTML += `👉${inicio}  `
-         }
 
+   if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+     
+      window.alert("[ERRO] : algum campo está vazio, por favor conferir e tentar novamente !")
+      saida.innerHTML = "IMPOSSÍVEL CONTAR"
+   }
+
+   else {
+      inicio = Number(inicio.value)
+      fim = Number(fim.value)
+      passo = Number(passo.value)
+      saida.innerHTML = "Começando 👨‍💻 : <br> "
+      if(passo <= 0){
+         window.alert("Passo não pode ser '0', considerando passo = 1")
+         passo =1
       }
-   } else if (inicio != "") {
-      for (inicio; inicio <= fim; inicio += passo) {
-         if (loop == 0) {
-            saida.innerHTML += `começando 👨‍💻 👉${inicio}  `
-            loop = 1
-         } else if (loop == 1) {
-            saida.innerHTML += `👉${inicio}  `
+
+      if (inicio < fim) {
+         for (inicio; inicio <= fim; inicio += passo) {
+
+            saida.innerHTML += ` ${inicio}  `
          }
-       
+        
+      } else {
+         for (inicio; inicio >= fim; inicio -= passo) {
+
+            saida.innerHTML += ` ${inicio}  `
+         }
       }
+      saida.innerHTML += "🏆"
    }
 }
+
 
 function limpar() {
    saida.innerHTML = " "
