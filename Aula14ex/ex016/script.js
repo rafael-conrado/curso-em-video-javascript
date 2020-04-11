@@ -1,44 +1,40 @@
-
-var a = 0;
-
 function contarpasso() {
    var inicio = Number(document.querySelector('.inicio').value)
    var fim = Number(document.querySelector('.fim').value)
    var passo = Number(document.querySelector('.passo').value)
    var saida = document.querySelector('div#saida')
-   
+   var loop = 0;
+
+
 
    if (inicio == "") {
-     saida.innerHTML = "Impossível calcular, por favor inserir um valor"
-      a = 1
-      return false;
-   }
+      saida.innerHTML = "Impossível calcular, por favor inserir um valor"
+    return false
+   } else if (passo == 0) {
+      window.alert("passo deve ser diferente de '0', considerando passo como 1")
+      passo = 1
+      for (inicio; inicio <= fim; inicio += passo) {
+         if (loop == 0) {
+            saida.innerHTML += `começando 👨‍💻 👉${inicio}  `
+            loop = 1
+         } else if (loop == 1) {
+            saida.innerHTML += `👉${inicio}  `
+         }
 
-
-
-   for (inicio; inicio <= fim; inicio += passo) {
-
-      if (a == 0 || a ==1) {
-         saida.innerHTML += `começando 👨‍💻 👉${inicio}  `
-         a=2
-      } else  {
-         saida.innerHTML += `👉${inicio}  `
       }
-
-      /*
-      inicio em branco "impossivel contar, inserir valor"
-      passo = 0 , passo invalido e iniciar com passo 1 
-      */
-
+   } else if (inicio != "") {
+      for (inicio; inicio <= fim; inicio += passo) {
+         if (loop == 0) {
+            saida.innerHTML += `começando 👨‍💻 👉${inicio}  `
+            loop = 1
+         } else if (loop == 1) {
+            saida.innerHTML += `👉${inicio}  `
+         }
+       
+      }
    }
-
-
 }
 
 function limpar() {
-   if (a == 0  ) {
-      saida.innerHTML = " "
-   }
-   
-
+   saida.innerHTML = " "
 }
