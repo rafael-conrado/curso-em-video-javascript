@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16 </title>
+    <link rel="stylesheet" href="estilo.css">
+    <!--Segura CTRL e clica no arquivo, se não existir o vscode criar automaticamente -->
+
+</head>
+
+
+<body>
+    <header>
+        <h1> Vamos contar </h1>
+    </header>
+    <section>
+        <div id="entrada">
+            <label> Ínicio  :</label> <input type="number" class="inicio" name="inicio" min="0"><br>
+            <label >Fim :</label> <input type="number" class="fim" name="fim"><br>
+            <label>Passo : </label><input type="number" class="passo" name="passo" min="0">
+            <input type="button" class="botao" value="contar" onclick="limpar();contarpasso()"></input>
+        </div>
+
+        <div id="saida">
+          <p> Preparando contagem....</p> 
+          
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; Rafael Conrado </p>
+    </footer>
+    <script src="script.js">
+    </script>
+</body>
+
+</html>

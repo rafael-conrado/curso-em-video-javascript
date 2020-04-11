@@ -1,0 +1,74 @@
+body{
+background:rgba(240, 6, 6, 0.856);
+font: normal 15 pt Arial;
+
+}
+
+header {
+color: white;
+text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+#entrada input {
+    color: blueviolet;
+    padding: 10px;
+    margin: 5px  ;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 350px;
+    display:inline-block;
+
+   
+}
+
+#entrada input.inicio {
+    position: relative;;
+    left:2px;
+    margin-top:2px;
+    width:350px;
+    background-color: rgb(128, 236, 240);
+    border-radius: 20px;
+  }
+
+#entrada input.fim {
+    position: relative;;
+    left:12px;
+    margin-top:2px;
+    width:350px;
+    background-color: rgb(104, 236, 87);
+    border-radius: 20px;
+  }
+
+ 
+
+  #entrada input.passo{
+    background-color: rgb(233, 155, 54);
+    border-radius: 20px;
+  }
+
+#entrada  {
+    background-color: rgba(247, 232, 25, 0.534);
+    padding: 10px 10px 10px 10px;
+   border-width:20px;
+    border-style:ridge  ;
+
+}
+
+section{
+background:  white;
+border-radius: 10px;
+padding: 15px;
+width: 500px ;
+margin: auto;
+box-shadow: 9px 9px 10px rgba(0, 0, 0, 0.61);
+}
+
+footer{
+color: white;
+text-align: center;
+font-style: italic;
+}

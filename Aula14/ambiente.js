@@ -1,6 +1,9 @@
-console.log("Vai começar")
-for( var c=1;c<=5;c++){
-    console.log(c)
-}
-console.log("FIM!")
 
+var inicio = 5
+var passo =2
+var fim=12
+
+for (inicio ; inicio <fim ; inicio +=passo  )
+{
+    console.log(inicio)
+}

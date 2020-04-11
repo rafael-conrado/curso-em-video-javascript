@@ -1,0 +1,10 @@
+console.log("Vai começar")
+var inicio = 1
+var passo =2
+var fim=10
+
+for(inicio;inicio<fim;passo+=passo){
+    console.log(inicio*passo)
+}
+console.log("FIM!")
+
