@@ -6,7 +6,7 @@ console.log(`nosso vetor é o ${num}`)
 console.log(num.length)// tamanho do vetor
 console.log(num.sort())//ordernar elementos
 
-let pos = num.indexOf(14)// busca o valor entre() e retorna a posição no vetor, caso não seja encontrado ele retorna -1
+let pos = num.indexOf(4)// busca o valor entre() e retorna a posição no vetor, caso não seja encontrado ele retorna -1
 if (pos == -1) {
     console.log("O valor não foi encontrado")
 } else {
