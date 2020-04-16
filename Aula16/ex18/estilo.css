@@ -25,11 +25,16 @@ font-style: italic;
 }
 
 #lista {
-    width: 200px; height: 200px;
+    width: 200px; 
     background: lightgreen;
     color: #000;
     font-weight: bold;
 }
 #finalizar {
     margin: 3% 0 0 11%  ;
+}
+
+#resultado{
+    height: 200px;
+    background-color: lightblue;
 }

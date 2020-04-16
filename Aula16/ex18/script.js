@@ -5,35 +5,86 @@
 let valor = document.getElementById('entrada') // entrada de valor
 var res = document.getElementById("resultado")
 let lista = document.getElementById('lista')
-var Avalor = []
+var arrayValores = []
 
 
+function isNumero(n) {
+    if (Number(n >= 1 && Number(n) <= 100)) {
+        return true
+    } else {
+        return false
+    }
 
+}
 
+function inLista(n, l) {
+
+    if (l.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+
+}
 
 
 function adicionar() {
-    var valor1 = Number(valor.value) // converter o valor para número para poder aplicar operação lógica ||
 
 
 
-    if (valor.value.length == 0 || valor1 < 1 || valor1 > 100) {
-        window.alert('Valor invalido ou já encontrado na lista')
-    } else {
-        Avalor.push(Number( valor.value))
-        var item = document.createElement('option')
-        item.text = `Valor${valor.value} add `
+    if (isNumero(valor.value) && !inLista(valor.value, arrayValores)) {
+        arrayValores.push(Number(valor.value))
+        let item = document.createElement('option')
+        item.text = `Valor ${valor.value} adicionado `
         lista.appendChild(item)
+        res.innerHTML = ''
+    } else {
+        window.alert("Valor inválido ou já encontrado na lista. ")
+
+    }
+    valor.value = ""
+    valor.focus()
+
+
+}
+
+function finalizar() {
+    if (arrayValores == 0) {
+        window.alert("Adicione valores antes de finalizar")
+    } else {
+        let total = arrayValores.length
+        let maior = arrayValores[0]
+        let menor = arrayValores[0]
+        let soma = 0
+        let media = 0
+
+        for (let pos in arrayValores) {
+            soma += arrayValores[pos]
+            if (arrayValores[pos] > maior) {
+                maior = arrayValores[pos]
+
+            }
+
+            if (arrayValores[pos] < menor) {
+                menor = arrayValores[pos]
+            }
+
+        }
+        media = soma / total
+
+
+        res.innerHTML = ''
+        res.innerHTML += `<p> Ao todo, temos ${total} números cadastrados</p>`
+        res.innerHTML += `<p>O maior valor informado foi ${maior}</p>`
+        res.innerHTML += `<p>O menor valor informado foi ${menor}</p>`
+        res.innerHTML += `<p>Somando todos os valores, temos${soma} </p>`
+        res.innerHTML +=`<p>A média dos valores digitados é ${media}</p>`
+
+
 
     }
 
 
 
+
 }
-
-// function finalizar() {
-//     if (saida.value.length == 0) {
-//         window.alert("Adicione valores antes de finalizar")
-
-//     }
-// }
